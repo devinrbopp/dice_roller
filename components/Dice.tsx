@@ -7,7 +7,7 @@ export default function Dice () {
 
     // calculate a value
     const rollDice = (sides: number) => {
-        return Math.floor(Math.random() * sides) + 1
+        return String(Math.floor(Math.random() * sides) + 1)
     }
 
     return(
