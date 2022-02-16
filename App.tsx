@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { FontAwesome5 } from '@expo/vector-icons'; 
-import Dice from './components/Dice';
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, Text, View } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
+import { NavigationContainer } from '@react-navigation/native'
+import { FontAwesome5, Ionicons } from '@expo/vector-icons' 
 
+import Dice from './components/Dice'
+import Settings from './components/Settings'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,9 +19,15 @@ const App = () => {
               return <FontAwesome5 name="dice-d20" color={color} size ={size} />
             }
           }} />
+          <Tab.Screen name="Settings" component={Settings} options={{
+            tabBarIcon: ({color, size}) => {
+              return <Ionicons name="ios-settings" color={color} size={size} />
+            }
+          }} />
         </Tab.Navigator>
+        <StatusBar />
       </NavigationContainer>
-  );
+  )
 }
 
 export default App
@@ -32,4 +39,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
