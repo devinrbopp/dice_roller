@@ -1,5 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { Button } from 'react-native'
+import { 
+    StyleSheet, 
+    Text, 
+    View, 
+    Button, 
+    Pressable 
+} from 'react-native'
 
 interface DieProps {
     title: string,
@@ -11,7 +16,29 @@ interface DieProps {
 export default function Die (props: DieProps) {
     return(
         <View>
-            <Button title={props.title} onPress={() => props.setResult(`Rolled d20: ${props.rollDice(props.sides)}`)} />
+            <Pressable
+                style={styles.button} 
+                onPress={() => props.setResult(`Rolled d${props.sides}: ${props.rollDice(props.sides)}`)} 
+            >
+                <Text style={styles.buttonText}>{props.title}</Text>
+            </Pressable>
+
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: 'black',
+        marginTop: 10
+    },
+    buttonText: {
+        color: 'white'
+    }
+})
