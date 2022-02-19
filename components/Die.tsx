@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
-        backgroundColor: 'black',
+        backgroundColor: 'green',
         marginTop: 10
     },
     buttonText: {
-        color: 'white'
+        color: 'white',
+        fontSize: 20
     }
 })

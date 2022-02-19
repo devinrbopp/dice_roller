@@ -14,6 +14,7 @@ export default function Dice () {
     return(
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{fontSize: 30}}>{result}</Text>
+            <Die rollDice={rollDice} title='Roll a d10000' setResult={setResult} sides={10000}/>
             <Die rollDice={rollDice} title='Roll a d20' setResult={setResult} sides={20}/>
             <Die rollDice={rollDice} title='Roll a d10' setResult={setResult} sides={10}/>
 

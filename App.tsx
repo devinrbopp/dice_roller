@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
-import { FontAwesome5, Ionicons } from '@expo/vector-icons' 
+import { FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons' 
 
 import Dice from './components/Dice'
+import Attacks from './components/Attacks'
 import Settings from './components/Settings'
 
 const Tab = createBottomTabNavigator()
@@ -17,6 +18,11 @@ const App = () => {
           <Tab.Screen name="Dice" component={Dice} options={{
             tabBarIcon: ({color, size}) => {
               return <FontAwesome5 name="dice-d20" color={color} size ={size} />
+            }
+          }} />
+          <Tab.Screen name="Saved Attacks" component={Attacks} options={{
+            tabBarIcon: ({color, size}) => {
+              return <MaterialCommunityIcons name="sword" color={color} size={size} />
             }
           }} />
           <Tab.Screen name="Settings" component={Settings} options={{
