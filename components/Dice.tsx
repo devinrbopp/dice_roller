@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import { useState, useEffect } from 'react'
+import Die from './Die'
 
 export default function Dice () {
 
@@ -13,7 +14,7 @@ export default function Dice () {
     return(
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{fontSize: 30}}>{result}</Text>
-            <Button title='Roll a d20' onPress={() => {setResult(rollDice(20))}} />
+            <Die rollDice={rollDice} title='Roll a d20' setResult={setResult} sides={20}/>
         </View>
     )
 }
