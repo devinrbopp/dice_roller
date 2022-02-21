@@ -8,7 +8,7 @@ import {
 
 interface DieProps {
     title: string,
-    setResult: (arg: string) => void,
+    setResult: (arg: number) => void,
     rollDice: (sides: number) => void,
     sides: number,
     setRolls: (arg: string) => void

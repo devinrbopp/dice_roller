@@ -4,7 +4,7 @@ import Die from './Die'
 
 export default function Dice () {
 
-    const [result, setResult] = useState('Roll to get started!')
+    const [result, setResult] = useState(0)
     const [rolls, setRolls] = useState('')
 
     // calculate a value
