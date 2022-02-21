@@ -10,7 +10,8 @@ interface DieProps {
     title: string,
     setResult: (arg: string) => void,
     rollDice: (sides: number) => void,
-    sides: number
+    sides: number,
+    setRolls: (arg: string) => void
 }
 
 export default function Die (props: DieProps) {
@@ -31,12 +32,16 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
+        // paddingVertical: 12,
+        // paddingHorizontal: 32,
+        width: 150,
+        height: 150,
         borderRadius: 4,
         elevation: 3,
         backgroundColor: 'green',
-        marginTop: 10
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 5
     },
     buttonText: {
         color: 'white',
