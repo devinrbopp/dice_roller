@@ -22,9 +22,12 @@ export default function Die (props: DieProps) {
             <Pressable
                 style={styles.button} 
                 onPress={() => {
+                    // console.log('you clicked:', 'd' + props.sides)
+                    // console.log('here is d4 state before click: ', props.rolls.d4)
                     props.setResult(props.rollDice(props.sides))
+                    // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
                     const tempRolls: Rolls = props.rolls
-                    tempRolls[('d' + props.sides)] += 1
+                    tempRolls[('d' + props.sides) as keyof Rolls] += 1
                     props.setRolls(tempRolls)
                 }} 
             >
