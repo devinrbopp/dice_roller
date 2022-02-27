@@ -5,13 +5,15 @@ import {
     Button, 
     Pressable 
 } from 'react-native'
+import Rolls from '../types/Rolls'
 
 interface DieProps {
     title: string,
     setResult: (arg: number) => void,
-    rollDice: (sides: number) => void,
+    rollDice: (sides: number) => number,
     sides: number,
-    setRolls: (arg: string) => void
+    rolls: Rolls,
+    setRolls: (arg: Rolls) => void
 }
 
 export default function Die (props: DieProps) {
@@ -19,7 +21,12 @@ export default function Die (props: DieProps) {
         <View>
             <Pressable
                 style={styles.button} 
-                onPress={() => props.setResult(`Rolled d${props.sides}: ${props.rollDice(props.sides)}`)} 
+                onPress={() => {
+                    props.setResult(props.rollDice(props.sides))
+                    const tempRolls: Rolls = props.rolls
+                    tempRolls[('d' + props.sides)] += 1
+                    props.setRolls(tempRolls)
+                }} 
             >
                 <Text style={styles.buttonText}>{props.title}</Text>
             </Pressable>
